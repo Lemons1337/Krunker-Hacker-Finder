@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Krunker.io - Hacker Finder
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  Finds all hacker tagged users in a clan
 // @author       Lemons
 // @match        *://krunker.io/social.html?p=clan&q=*
@@ -24,7 +24,7 @@ const observer = new MutationObserver(mutations => {
     mutations.forEach(mutation => {
         mutation.addedNodes.forEach(node => {
             if (node.className === 'scrollItem' && node.parentElement.id === 'clanInfo') {
-                node.insertAdjacentHTML('beforeend', '<div id="profileLogin" class="button lgn buttonR" onclick="findHackers()" style="display: block; margin-bottom: 30px;">Find</div>');
+                node.insertAdjacentHTML('beforeend', '<div id="profileLogin" class="button lgn buttonR" onclick="findHackers()" style="display: block; margin-bottom: 4px;">Find</div>');
             }
         });
     });
